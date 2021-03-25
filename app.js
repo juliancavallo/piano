@@ -1,5 +1,6 @@
 const WHITE_KEYS = ["a","s","d","f","g","h","j"];
 const BLACK_KEYS = ["w","e","r","t","y"];
+const FUNCTION_KEYS = ["+","-"];
 
 const keys = document.querySelectorAll('.key');
 const whiteKeys = document.querySelectorAll('.key.white');
@@ -16,12 +17,16 @@ document.addEventListener("keydown", e => {
     const key = e.key;
     const whiteKeyIndex = WHITE_KEYS.indexOf(key);
     const blackKeyIndex = BLACK_KEYS.indexOf(key);
+    const functionKeyIndex = FUNCTION_KEYS.indexOf(key);
 
     if(whiteKeyIndex > -1)
         playNote(whiteKeys[whiteKeyIndex]);
 
     if(blackKeyIndex > -1)
         playNote(blackKeys[blackKeyIndex]);
+
+    if(functionKeyIndex > -1)
+        changeOctave(key == "+");
 });
 
 function playNote(key){
@@ -46,4 +51,21 @@ document.getElementById("btnShowLetters").addEventListener("click", () => {
     setTimeout(() => {
         letters.forEach(l => l.classList.add("hidden"));    
     }, 4000);
-})
+});
+
+document.getElementById("btnUp").addEventListener("click", () =>{
+    changeOctave(true);
+});
+
+document.getElementById("btnDown").addEventListener("click", () =>{
+    changeOctave(false);
+});
+
+function changeOctave(up){
+    let pOctave = document.getElementById("octave");
+    let octave = parseInt(pOctave.innerHTML, 10);
+
+    if ((octave < 7 && up) || (octave > 1 && !up)) {
+        pOctave.innerHTML = up ? ++octave : --octave;
+    }
+}

@@ -5,11 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <title>Online Piano</title>
 </head>
 <body>
-    <button id="btnShowLetters">Show keyboard letters</button>
-
     <div class="piano">
         <div data-note="C" class="key white"><p class="letter hidden">A</p></div>
         <div data-note="Db" class="key black"><p class="letter hidden">W</p></div>
@@ -23,13 +22,24 @@
         <div data-note="A" class="key white"><p class="letter hidden">H</p></div>
         <div data-note="Bb" class="key black"><p class="letter hidden">Y</p></div>
         <div data-note="B" class="key white"><p class="letter hidden">J</p></div>
-    </div>
+        
+            <div id="octaveSelector">
+                <i id="btnUp" class="fas fa-sort-up">
+                    <!-- <p class="letter hidden">+</p> -->
+                </i>
 
-    <div id="octaveSelector">
-        <button id="btnUp"></button>
-        <p id="octave">3</p>
-        <button id="btnDown"></button>
+                <p id="octave">3</p>
+
+                <i id="btnDown" class="fas fa-sort-down">
+                    <!-- <p class="letter hidden">-</p> -->
+                </i>
+                
+            </div>
     </div>
+    
+    <button id="btnShowLetters">Show keyboard letters</button>
+
+
 
     <script src="app.js"></script>
 </body>

@@ -4,13 +4,13 @@
 
 :root{
     --primary: #465462; /*strong*/
-    --secondary: #626a9eab; /*info background*/
-    --third: #ffffffb0; /*sections background*/
+    --secondary: #626a9e; /*info background*/
+    --third: #ffffff; /*sections background*/
     --fourth: #242b31; /*font*/
 }
 
 .hidden{
-    display: none;
+    visibility: hidden;
 }
 
 body{
@@ -24,6 +24,8 @@ body{
 
 .piano{
     display: flex;
+    z-index: 3;
+    position: relative;
 }
 
 .key{
@@ -35,13 +37,13 @@ body{
 }
 
 .white{
-    --width: 15vh;
+    --width: 90px;
     background-color: white;
     border: 1px solid #333;
 }
 
 .black{
-    --width: 9vh;
+    --width: 55px;
     background-color: black;
     border: 1px solid #333;
     margin-left: calc(var(--width) / -2);
@@ -77,6 +79,7 @@ body{
     background-color: var(--fourth);
     color: var(--third);
     font-size: medium;
+    border-radius: 15px;
 }
 
 #btnShowLetters:hover{
@@ -86,4 +89,36 @@ body{
 
 #btnShowLetters:focus{
     outline: none;
+}
+
+#octaveSelector{
+    margin-top: 20%;
+    margin-left: 30px;
+    height: 200px;
+    padding: 15px;
+    border: 1px solid var(--fourth);
+    color: var(--fourth);
+    border-radius: 10px;
+}
+
+#octaveSelector i{
+    font-size: 55px;
+}
+
+#octaveSelector i:hover{
+    cursor: pointer;
+    color: var(--secondary);
+}
+
+#octaveSelector .letter{
+    position: relative;
+    margin: 0 15px;
+    display: inline-block;
+    overflow: visible;
+}
+
+#octave{
+    text-align: center;
+    font-size: 55px;
+    margin: 0;
 }
