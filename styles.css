@@ -27,6 +27,7 @@ body{
     display: flex;
     z-index: 3;
     position: relative;
+     align-self: center;
 }
 
 .key{
@@ -91,36 +92,73 @@ body{
     outline: none;
 }
 
-#octaveSelector{
+#octaveSelector, #octaveLetterReference{
     margin-top: 20%;
-    margin-left: 30px;
     height: 200px;
     padding: 15px;
+}
+
+#octaveSelector{
+    margin-left: 30px;
     border: 1px solid var(--fourth);
     color: var(--fourth);
     border-radius: 10px;
     background-color: var(--third);
 }
 
-#octaveSelector i{
+#octaveSelector span{
     font-size: 55px;
     color: var(--fourth);
 }
 
-#octaveSelector i:hover{
+#octaveSelector span:hover{
     cursor: pointer;
     color: var(--primary);
 }
 
-#octaveSelector .letter{
+#octaveLetterReference {
     position: relative;
-    margin: 0 15px;
-    display: inline-block;
-    overflow: visible;
+}
+
+#octaveLetterReference .letter{
+    display: block;
+    position: absolute;
+}
+
+#octaveLetterReference .letter.up{    
+    margin-top: 15px;
+    top: 0;
+}
+
+#octaveLetterReference .letter.down{
+    bottom: 0;
+    margin-bottom: 15px;
 }
 
 #octave{
     text-align: center;
     font-size: 55px;
     margin: 0;
+}
+
+
+/*Media queries*/
+@media (max-height: 500px), (max-width: 950px){
+    #octaveSelector, #btnShowLetters{
+        visibility: hidden;
+    }
+}
+
+@media (max-width: 750px){
+    .white{
+        --width: 50px
+        /*total width = 50px * 7 = 350px*/
+    }
+    .black{
+        --width: 30.5px;
+    }
+    .piano{
+        position: absolute;
+        margin-left: 125px;
+    }
 }
