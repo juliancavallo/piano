@@ -99,6 +99,7 @@ body{
     border: 1px solid var(--fourth);
     color: var(--fourth);
     border-radius: 10px;
+    background-color: var(--third);
 }
 
 #octaveSelector i{
