@@ -9,6 +9,10 @@
     --fourth: #242b31; /*font*/
 }
 
+.hidden{
+    display: none;
+}
+
 body{
     background-color: var(--primary);
     margin: 0;
@@ -23,35 +27,63 @@ body{
 }
 
 .key{
+    position: relative;
     height: calc(var(--width) * 5);
     width: var(--width);
+    display: flex;
+    justify-content: center;
 }
 
 .white{
-    --width: 80px;
+    --width: 15vh;
     background-color: white;
     border: 1px solid #333;
 }
 
-.white.active{
-    background-color: #ccc;
-}
-
 .black{
-    --width: 50px;
+    --width: 9vh;
     background-color: black;
     border: 1px solid #333;
     margin-left: calc(var(--width) / -2);
     margin-right: calc(var(--width) / -2);
     z-index: 2;
+    color: white;
+}
+
+.white.active{
+    background-color: #ccc;
+    border: 3px solid var(--primary);
 }
 
 .black.active{
     background-color: #333;
+    border: 3px solid var(--third);
+}
+
+.letter{
+    position:absolute;                 
+    bottom: 0;
+    font-size: x-large;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #btnShowLetters{
     position: absolute;
     bottom: 10px;
     right: 10px;
+    width: 200px;
+    height: 50px;
+    border: none;
+    background-color: var(--fourth);
+    color: var(--third);
+    font-size: medium;
+}
+
+#btnShowLetters:hover{
+    background-color: var(--secondary);
+    cursor: pointer;
+}
+
+#btnShowLetters:focus{
+    outline: none;
 }

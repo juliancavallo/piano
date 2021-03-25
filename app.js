@@ -33,3 +33,13 @@ function playNote(key){
         key.classList.remove("active");
     })
 }
+
+document.getElementById("btnShowLetters").addEventListener("click", () => {
+    const letters = document.querySelectorAll(".letter");
+    letters.forEach(l => l.classList.remove("hidden"));  
+      
+    setTimeout(() => {
+        letters.forEach(l => l.classList.add("hidden"));    
+    }, 2000);
+    
+})
