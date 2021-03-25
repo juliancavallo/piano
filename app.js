@@ -25,21 +25,25 @@ document.addEventListener("keydown", e => {
 });
 
 function playNote(key){
-    const noteAudio = document.getElementById(key.dataset.note);
+    const octave = document.getElementById("octave").innerHTML;
+    const filename = key.dataset.note + octave;
+    
+    const noteAudio = document.createElement("audio");
+    noteAudio.src = `notes/${filename}.mp3`;
+
     noteAudio.currentTime = 0;
     noteAudio.play();
     key.classList.add("active");
-    noteAudio.addEventListener("ended", () => {
+    setTimeout(() => {
         key.classList.remove("active");
-    })
+    }, 500);
 }
 
 document.getElementById("btnShowLetters").addEventListener("click", () => {
     const letters = document.querySelectorAll(".letter");
     letters.forEach(l => l.classList.remove("hidden"));  
-      
+
     setTimeout(() => {
         letters.forEach(l => l.classList.add("hidden"));    
-    }, 2000);
-    
+    }, 4000);
 })
