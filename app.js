@@ -34,7 +34,7 @@ function playNote(key){
     const filename = key.dataset.note + octave;
     
     const noteAudio = document.createElement("audio");
-    noteAudio.src = `/notes/${filename}.mp3`;
+    noteAudio.src = `notes/${filename}.mp3`;
 
     noteAudio.currentTime = 0;
     noteAudio.play();
