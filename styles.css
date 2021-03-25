@@ -14,12 +14,13 @@
 }
 
 body{
-    background-color: var(--primary);
+    background-color: var(--secondary);
     margin: 0;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: Arial, Helvetica, sans-serif
 }
 
 .piano{
@@ -66,7 +67,6 @@ body{
     position:absolute;                 
     bottom: 0;
     font-size: x-large;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 #btnShowLetters{
@@ -83,7 +83,7 @@ body{
 }
 
 #btnShowLetters:hover{
-    background-color: var(--secondary);
+    background-color: var(--primary);
     cursor: pointer;
 }
 
@@ -104,11 +104,12 @@ body{
 
 #octaveSelector i{
     font-size: 55px;
+    color: var(--fourth);
 }
 
 #octaveSelector i:hover{
     cursor: pointer;
-    color: var(--secondary);
+    color: var(--primary);
 }
 
 #octaveSelector .letter{
