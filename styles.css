@@ -44,7 +44,7 @@ body{
     width: var(--width);
     display: flex;
     justify-content: center;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .white{
@@ -103,8 +103,9 @@ body{
     height: 50px;
     border: none;
     color: var(--third);
-    font-size: medium;
-    border-radius: 15px;
+    border-radius: 10px;
+    font-size: 0.9em;
+    letter-spacing: 1px;
 }
 
 #btnShowLetters:hover{
@@ -148,7 +149,7 @@ body{
 #octaveLetterReference .letter{
     display: block;
     position: absolute;
-    color: var(--third);
+    color: var(--fourth);
 }
 
 #octaveLetterReference .letter.up{    
@@ -168,14 +169,20 @@ body{
 
 
 /*Media queries*/
-@media (max-height: 490px) and (max-width: 1050px), (max-width: 850px){
+@media (max-height: 280px), (max-width: 880px){
     #octaveSelector, #btnShowLetters{
         display: none;
     }
 }
 
+@media (max-height: 450px){
+    .title{
+        display: none;
+    }
+}
+
 /*max width = 72px * 14 = 1008px*/
-@media (max-width: 1150px){
+@media (max-width: 1300px), (max-height: 500px ){
     .white{
         --width: 50px
     }
@@ -185,7 +192,7 @@ body{
     #btnShowLetters{
         width: 150px;
         height: 40px;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 }
 
