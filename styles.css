@@ -36,16 +36,17 @@ body{
     width: var(--width);
     display: flex;
     justify-content: center;
+    border-radius: 5px;
 }
 
 .white{
-    --width: 90px;
+    --width: 72px;
     background-color: white;
     border: 1px solid #333;
 }
 
 .black{
-    --width: 55px;
+    --width: 44px;
     background-color: black;
     border: 1px solid #333;
     margin-left: calc(var(--width) / -2);
@@ -93,7 +94,6 @@ body{
 }
 
 #octaveSelector, #octaveLetterReference{
-    margin-top: 20%;
     height: 200px;
     padding: 15px;
 }
@@ -123,6 +123,7 @@ body{
 #octaveLetterReference .letter{
     display: block;
     position: absolute;
+    color: var(--third);
 }
 
 #octaveLetterReference .letter.up{    
@@ -143,22 +144,33 @@ body{
 
 
 /*Media queries*/
-@media (max-height: 500px), (max-width: 950px){
+@media (max-height: 500px), (max-width: 850px){
     #octaveSelector, #btnShowLetters{
-        visibility: hidden;
+        display: none;
     }
 }
 
-@media (max-width: 750px){
+/*max width = 72px * 14 = 1008px*/
+@media (max-width: 1150px){
     .white{
         --width: 50px
-        /*total width = 50px * 7 = 350px*/
     }
     .black{
         --width: 30.5px;
     }
-    .piano{
-        position: absolute;
-        margin-left: 125px;
+    #btnShowLetters{
+        width: 150px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+}
+
+/*max width = 50px * 14 = 700px*/
+@media (max-width: 750px){
+    .white{
+        --width: 32px
+    }
+    .black{
+        --width: 19.52px;
     }
 }

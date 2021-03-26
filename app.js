@@ -1,5 +1,5 @@
-const WHITE_KEYS = ["a","s","d","f","g","h","j"];
-const BLACK_KEYS = ["w","e","r","t","y"];
+const WHITE_KEYS = ["a","s","d","f","g","h","j","k","l","z","x","c","v","b"];
+const BLACK_KEYS = ["w","e","t","y","u","i","o","p","n","m"];
 const FUNCTION_KEYS = ["+","-"];
 
 const keys = document.querySelectorAll('.key');
@@ -30,8 +30,7 @@ document.addEventListener("keydown", e => {
 });
 
 function playNote(key){
-    const octave = document.getElementById("octave").innerHTML;
-    const filename = key.dataset.note + octave;
+    const filename = key.dataset.note + key.dataset.octave;
     
     const noteAudio = document.createElement("audio");
     noteAudio.src = `notes/${filename}.mp3`;
@@ -62,10 +61,15 @@ document.getElementById("btnDown").addEventListener("click", () =>{
 });
 
 function changeOctave(up){
-    let pOctave = document.getElementById("octave");
-    let octave = parseInt(pOctave.innerHTML, 10);
+    let numberShown = document.getElementById("octave");
+    let octave = parseInt(numberShown.innerHTML, 10);
 
-    if ((octave < 7 && up) || (octave > 1 && !up)) {
-        pOctave.innerHTML = up ? ++octave : --octave;
+    if ((octave < 6 && up) || (octave > 1 && !up)) {
+        keys.forEach(key => {
+            let keyOctave = key.dataset.octave;
+            key.dataset.octave = up ? ++keyOctave : --keyOctave;
+        });
+
+        numberShown.innerHTML = up ? ++octave : --octave;    
     }
 }
