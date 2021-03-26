@@ -3,9 +3,9 @@
 }
 
 :root{
-    --primary: #465462; /*strong*/
-    --secondary: #626a9e; /*info background*/
-    --third: #ffffff; /*sections background*/
+    --primary: #555555; /*strong*/
+    --secondary: #d9e4dd; /*info background*/
+    --third: #cdc9c3; /*sections background*/
     --fourth: #242b31; /*font*/
 }
 
@@ -19,8 +19,16 @@ body{
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
-    font-family: Arial, Helvetica, sans-serif
+    align-items: center;  
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 5px;
+}
+
+.title{
+    position: absolute;
+    top: 0;
+    font-weight: lighter;
+    font-size: 40px;
 }
 
 .piano{
@@ -71,6 +79,22 @@ body{
     font-size: x-large;
 }
 
+
+/*Btn letters*/
+.lettersShowFew{
+    background-color: var(--fourth) !important;
+}
+
+.lettersShowIndef{
+    background-color: var(--primary) !important;
+    color: var(--third) !important;
+}
+
+.lettersHide{
+    background-color: var(--third) !important;
+    color: var(--fourth) !important;
+}
+
 #btnShowLetters{
     position: absolute;
     bottom: 10px;
@@ -78,14 +102,13 @@ body{
     width: 200px;
     height: 50px;
     border: none;
-    background-color: var(--fourth);
     color: var(--third);
     font-size: medium;
     border-radius: 15px;
 }
 
 #btnShowLetters:hover{
-    background-color: var(--primary);
+    border: 1px solid white;
     cursor: pointer;
 }
 
@@ -93,6 +116,8 @@ body{
     outline: none;
 }
 
+
+/*Octave selector*/
 #octaveSelector, #octaveLetterReference{
     height: 200px;
     padding: 15px;
@@ -133,18 +158,17 @@ body{
 
 #octaveLetterReference .letter.down{
     bottom: 0;
-    margin-bottom: 15px;
 }
 
 #octave{
     text-align: center;
-    font-size: 55px;
+    font-size: 45px;
     margin: 0;
 }
 
 
 /*Media queries*/
-@media (max-height: 500px), (max-width: 850px){
+@media (max-height: 490px) and (max-width: 1050px), (max-width: 850px){
     #octaveSelector, #btnShowLetters{
         display: none;
     }

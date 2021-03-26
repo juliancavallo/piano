@@ -43,13 +43,49 @@ function playNote(key){
     }, 500);
 }
 
-document.getElementById("btnShowLetters").addEventListener("click", () => {
+var timeout;
+document.getElementById("btnShowLetters").addEventListener("click", (e) => {
+    const btnAction = e.target.dataset.action;
     const letters = document.querySelectorAll(".letter");
-    letters.forEach(l => l.classList.remove("hidden"));  
 
-    setTimeout(() => {
-        letters.forEach(l => l.classList.add("hidden"));    
-    }, 4000);
+    switch(btnAction){
+        case "showFew":    
+            letters.forEach(l => l.classList.remove("hidden"));  
+            e.target.dataset.action = "showIndef";
+
+            e.target.classList.remove("lettersShowFew");
+            e.target.classList.add("lettersShowIndef");  
+
+            timeout = setTimeout(() => {
+                letters.forEach(l => l.classList.add("hidden"));  
+
+                e.target.dataset.action = "showFew";
+
+                e.target.classList.remove("lettersShowIndef");
+                e.target.classList.add("lettersShowFew");  
+            }, 2000);
+
+            break;
+
+        case "showIndef":
+            clearTimeout(timeout);    
+            
+            letters.forEach(l => l.classList.remove("hidden"));  
+
+            e.target.dataset.action = "hide";
+            
+            e.target.classList.remove("lettersShowIndef");
+            e.target.classList.add("lettersHide");
+            break;
+
+        case "hide":
+            letters.forEach(l => l.classList.add("hidden"));  
+            e.target.dataset.action = "showFew";
+
+            e.target.classList.remove("lettersHide");
+            e.target.classList.add("lettersShowFew");
+            break;
+    }
 });
 
 document.getElementById("btnUp").addEventListener("click", () =>{
