@@ -211,12 +211,13 @@ body{
 @media (max-width: 750px){
 
     .white{
-        --width: 24px
+        --width: 35px
     }
     .black{
-        --width: 15px;
+        --width: 22px;
     }
     .title{
         font-size: xx-large;
     }
 }
+
