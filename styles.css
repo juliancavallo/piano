@@ -180,12 +180,12 @@ body{
 
 /*Media queries*/
 @media (max-height: 280px), (max-width: 880px){
-    #octaveSelector, #btnShowLetters, .hint{
+    #octaveSelector, #btnShowLetters, #octaveLetterReference, .hint{
         display: none;
     }
 }
 
-@media (max-height: 300px) and (max-width: 750px){
+@media (max-height: 450px) and (max-width: 750px){
     .title{
         display: none;
     }
