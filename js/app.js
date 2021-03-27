@@ -1,3 +1,5 @@
+import * as functions from './functions.js';
+
 const WHITE_KEYS = ["a","s","d","f","g","h","j","k","l","z","x","c","v","b"];
 const BLACK_KEYS = ["w","e","t","y","u","i","o","p","n","m"];
 const FUNCTION_KEYS = ["+","-"];
@@ -5,6 +7,13 @@ const FUNCTION_KEYS = ["+","-"];
 const keys = document.querySelectorAll('.key');
 const whiteKeys = document.querySelectorAll('.key.white');
 const blackKeys = document.querySelectorAll('.key.black');
+
+document.getElementById("btnHint").addEventListener("click", () => {
+      functions.showToast("Hint", `Press "Show keyboard letters" button once for show, for a few seconds, the letters binded to the piano keys.
+        \nIf you press the button again while it's light-grey, it will turn white, and show the letters permanently.
+        \nClicking it one more time will turn it dark-grey and hide the letters.`);
+});
+      
 
 keys.forEach(key =>{
     key.addEventListener("click", () => playNote(key));

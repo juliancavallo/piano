@@ -19,28 +19,26 @@ body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;  
     font-family: 'Montserrat', sans-serif;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
 }
 
-.row.left{
+.wrapper.left{
     position: absolute;
     bottom: 10px;
     right: 10px;
 }
 
 .title{
-    position: absolute;
-    top: 0;
     font-weight: lighter;
     font-size: 40px;
+    margin: 40px;
 }
 
 .piano{
     display: flex;
-    z-index: 3;
     position: relative;
      align-self: center;
 }
@@ -121,6 +119,14 @@ body{
     outline: none;
 }
 
+.hint{
+    font-size: 1.3rem;
+}
+
+.hint:hover{
+    font-weight: bold;
+    cursor: pointer;
+}
 
 /*Octave selector*/
 #octaveSelector, #octaveLetterReference{
@@ -174,7 +180,7 @@ body{
 
 /*Media queries*/
 @media (max-height: 280px), (max-width: 880px){
-    #octaveSelector, #btnShowLetters{
+    #octaveSelector, #btnShowLetters, .hint{
         display: none;
     }
 }
