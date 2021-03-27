@@ -11,48 +11,51 @@
 </head>
 <body>
     <p class="title">Online piano</p>
-    <div class="piano">
-        <div data-note="C" data-octave="3" class="key white"><p class="letter hidden">A</p></div>
-        <div data-note="Db" data-octave="3" class="key black"><p class="letter hidden">W</p></div>
-        <div data-note="D" data-octave="3" class="key white"><p class="letter hidden">S</p></div>
-        <div data-note="Eb" data-octave="3" class="key black"><p class="letter hidden">E</p></div>
-        <div data-note="E" data-octave="3" class="key white"><p class="letter hidden">D</p></div>
-        <div data-note="F" data-octave="3" class="key white"><p class="letter hidden">F</p></div>
-        <div data-note="Gb" data-octave="3" class="key black"><p class="letter hidden">T</p></div>
-        <div data-note="G" data-octave="3" class="key white"><p class="letter hidden">G</p></div>
-        <div data-note="Ab" data-octave="3" class="key black"><p class="letter hidden">Y</p></div>
-        <div data-note="A" data-octave="3" class="key white"><p class="letter hidden">H</p></div>
-        <div data-note="Bb" data-octave="3" class="key black"><p class="letter hidden">U</p></div>
-        <div data-note="B" data-octave="3" class="key white"><p class="letter hidden">J</p></div>
-       
-        <div data-note="C" data-octave="4" class="key white"><p class="letter hidden">K</p></div>
-        <div data-note="Db" data-octave="4" class="key black"><p class="letter hidden">I</p></div>
-        <div data-note="D" data-octave="4" class="key white"><p class="letter hidden">L</p></div>
-        <div data-note="Eb" data-octave="4" class="key black"><p class="letter hidden">O</p></div>
-        <div data-note="E" data-octave="4" class="key white"><p class="letter hidden">Z</p></div>
-        <div data-note="F" data-octave="4" class="key white"><p class="letter hidden">X</p></div>
-        <div data-note="Gb" data-octave="4" class="key black"><p class="letter hidden">P</p></div>
-        <div data-note="G" data-octave="4" class="key white"><p class="letter hidden">C</p></div>
-        <div data-note="Ab" data-octave="4" class="key black"><p class="letter hidden">N</p></div>
-        <div data-note="A" data-octave="4" class="key white"><p class="letter hidden">V</p></div>
-        <div data-note="Bb" data-octave="4" class="key black"><p class="letter hidden">M</p></div>
-        <div data-note="B" data-octave="4" class="key white"><p class="letter hidden">B</p></div>
+    <div class="row">
+        <div class="piano">
+            <div data-note="C" data-octave="3" class="key white"><p class="letter hidden">A</p></div>
+            <div data-note="Db" data-octave="3" class="key black"><p class="letter hidden">W</p></div>
+            <div data-note="D" data-octave="3" class="key white"><p class="letter hidden">S</p></div>
+            <div data-note="Eb" data-octave="3" class="key black"><p class="letter hidden">E</p></div>
+            <div data-note="E" data-octave="3" class="key white"><p class="letter hidden">D</p></div>
+            <div data-note="F" data-octave="3" class="key white"><p class="letter hidden">F</p></div>
+            <div data-note="Gb" data-octave="3" class="key black"><p class="letter hidden">T</p></div>
+            <div data-note="G" data-octave="3" class="key white"><p class="letter hidden">G</p></div>
+            <div data-note="Ab" data-octave="3" class="key black"><p class="letter hidden">Y</p></div>
+            <div data-note="A" data-octave="3" class="key white"><p class="letter hidden">H</p></div>
+            <div data-note="Bb" data-octave="3" class="key black"><p class="letter hidden">U</p></div>
+            <div data-note="B" data-octave="3" class="key white"><p class="letter hidden">J</p></div>
         
-        <div id="octaveSelector">
-            <span id="btnUp" class="fas fa-sort-up"></span>
-            <p id="octave">3</p>
-            <span id="btnDown" class="fas fa-sort-down"></span>
+            <div data-note="C" data-octave="4" class="key white"><p class="letter hidden">K</p></div>
+            <div data-note="Db" data-octave="4" class="key black"><p class="letter hidden">I</p></div>
+            <div data-note="D" data-octave="4" class="key white"><p class="letter hidden">L</p></div>
+            <div data-note="Eb" data-octave="4" class="key black"><p class="letter hidden">O</p></div>
+            <div data-note="E" data-octave="4" class="key white"><p class="letter hidden">Z</p></div>
+            <div data-note="F" data-octave="4" class="key white"><p class="letter hidden">X</p></div>
+            <div data-note="Gb" data-octave="4" class="key black"><p class="letter hidden">P</p></div>
+            <div data-note="G" data-octave="4" class="key white"><p class="letter hidden">C</p></div>
+            <div data-note="Ab" data-octave="4" class="key black"><p class="letter hidden">N</p></div>
+            <div data-note="A" data-octave="4" class="key white"><p class="letter hidden">V</p></div>
+            <div data-note="Bb" data-octave="4" class="key black"><p class="letter hidden">M</p></div>
+            <div data-note="B" data-octave="4" class="key white"><p class="letter hidden">B</p></div>
             
-        </div>
-
-        <div id="octaveLetterReference">
-            <p class="letter up hidden">+</p>
-            <p class="letter down hidden">-</p>
+            <div id="octaveSelector">
+                <span id="btnUp" class="fas fa-sort-up"></span>
+                <p id="octave">3</p>
+                <span id="btnDown" class="fas fa-sort-down"></span>
+                
+            </div>
+            <div id="octaveLetterReference">
+                <p class="letter up hidden">+</p>
+                <p class="letter down hidden">-</p>
+            </div>
         </div>
     </div>
-    <button id="btnShowLetters" data-action="showFew" class="lettersShowFew">Show keyboard letters</button>
 
-
+    <div class="row left">
+        <i>?</i>
+        <button id="btnShowLetters" data-action="showFew" class="lettersShowFew">Show keyboard letters</button>
+    </div>
 
     <script src="app.js"></script>
 </body>
