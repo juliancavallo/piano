@@ -7,13 +7,10 @@ export function showToast(title, message, autohide, delay){
 
     const div = document.createElement("div");
     div.innerHTML = 
-        `<div class="toast" role="alert" aria-live="assertive" aria-atomic="true"  style="position: absolute; top: 1rem; z-index:999; font-weight: bold;" data-autohide=${autohide} data-delay=${delay}>
+        `<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: 1rem; z-index:999; font-weight: bold; backdrop-filter: blur(10px);" data-bs-autohide=${autohide} data-delay=${delay}">
             <div class="toast-header">
-        
-            <strong class="mr-auto">${title}</strong>
-            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
+                <strong class="me-auto">${title}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
             <div class="toast-body" style="white-space: pre-line;">
                 ${message}
@@ -22,9 +19,9 @@ export function showToast(title, message, autohide, delay){
 
     const toast = div.firstChild;
     document.body.appendChild(toast);
-    $(toast).toast("show");
+    new bootstrap.Toast(toast).show();
 
-    $(toast).on('hidden.bs.toast', function () {
+    toast.addEventListener('hidden.bs.toast', function () {
         document.body.removeChild(toast);
       })
 }
