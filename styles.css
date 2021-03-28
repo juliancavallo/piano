@@ -194,7 +194,7 @@ body{
 /*max width = 72px * 14 = 1008px*/
 @media (max-width: 1300px), (max-height: 500px ){
     .white{
-        --width: 50px
+        --width: 45px
     }
     .black{
         --width: 30.5px;
@@ -208,13 +208,16 @@ body{
 }
 
 /*max width = 50px * 14 = 700px*/
-@media (max-width: 750px){
+@media (max-width: 400px){
 
     .white{
-        --width: 35px
+        --width: 25px
     }
     .black{
-        --width: 22px;
+        --width: 16px;
+    }
+    .key{
+        border-radius: 6px;
     }
     .title{
         font-size: xx-large;
